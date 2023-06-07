@@ -1,0 +1,107 @@
+prompt --application/shared_components/navigation/lists/barra_di_navigazione
+begin
+--   Manifest
+--     LIST: Barra di navigazione
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.10.07'
+,p_release=>'22.2.3'
+,p_default_workspace_id=>22028075290766633
+,p_default_application_id=>101
+,p_default_id_offset=>0
+,p_default_owner=>'SVIL_APEX'
+);
+wwv_flow_imp_shared.create_list(
+ p_id=>wwv_flow_imp.id(22330303598170479)
+,p_name=>'Barra di navigazione'
+,p_list_status=>'PUBLIC'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(22514264631171034)
+,p_list_item_display_sequence=>10
+,p_list_item_link_text=>'Installa applicazione'
+,p_list_item_link_target=>'#action$a-pwa-install'
+,p_list_item_icon=>'fa-cloud-download'
+,p_list_text_02=>'a-pwaInstall'
+,p_list_item_current_type=>'NEVER'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(22514604932171034)
+,p_list_item_display_sequence=>20
+,p_list_item_link_text=>'Feedback'
+,p_list_item_link_target=>'f?p=&APP_ID.:10050:&APP_SESSION.::&DEBUG.:RP,10050:P10050_PAGE_ID:&APP_PAGE_ID.'
+,p_list_item_icon=>'fa-comment-o'
+,p_list_item_disp_cond_type=>'EXPRESSION'
+,p_list_item_disp_condition=>'apex_util.feedback_enabled'
+,p_list_item_disp_condition2=>'PLSQL'
+,p_list_text_02=>'icon-only'
+,p_required_patch=>wwv_flow_imp.id(22332406152170498)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(22514992038171034)
+,p_list_item_display_sequence=>30
+,p_list_item_link_text=>'Informazioni'
+,p_list_item_icon=>'fa-question-circle-o'
+,p_list_text_02=>'icon-only'
+,p_required_patch=>wwv_flow_imp.id(22332972152170498)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(22515493610171035)
+,p_list_item_display_sequence=>40
+,p_list_item_link_text=>'Guida sulla pagina'
+,p_list_item_link_target=>'f?p=&APP_ID.:10061:&APP_SESSION.::&DEBUG.::P10061_PAGE_ID:&APP_PAGE_ID.'
+,p_list_item_icon=>'fa-question-circle-o'
+,p_parent_list_item_id=>wwv_flow_imp.id(22514992038171034)
+,p_list_text_02=>'icon-only'
+,p_required_patch=>wwv_flow_imp.id(22332972152170498)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(22515846638171035)
+,p_list_item_display_sequence=>50
+,p_list_item_link_text=>'---'
+,p_list_item_link_target=>'separator'
+,p_parent_list_item_id=>wwv_flow_imp.id(22514992038171034)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(22516205373171035)
+,p_list_item_display_sequence=>60
+,p_list_item_link_text=>'Pagina delle informazioni'
+,p_list_item_link_target=>'f?p=&APP_ID.:10060:&APP_SESSION.::&DEBUG.:10060::'
+,p_list_item_icon=>'fa-info-circle-o'
+,p_parent_list_item_id=>wwv_flow_imp.id(22514992038171034)
+,p_required_patch=>wwv_flow_imp.id(22332972152170498)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(22516515380171035)
+,p_list_item_display_sequence=>70
+,p_list_item_link_text=>'&APP_USER.'
+,p_list_item_link_target=>'#'
+,p_list_item_icon=>'fa-user'
+,p_list_text_02=>'has-username'
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(22517006836171036)
+,p_list_item_display_sequence=>80
+,p_list_item_link_text=>'---'
+,p_list_item_link_target=>'separator'
+,p_parent_list_item_id=>wwv_flow_imp.id(22516515380171035)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(22517487725171036)
+,p_list_item_display_sequence=>90
+,p_list_item_link_text=>'Scollega'
+,p_list_item_link_target=>'&LOGOUT_URL.'
+,p_list_item_icon=>'fa-sign-out'
+,p_parent_list_item_id=>wwv_flow_imp.id(22516515380171035)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_imp.component_end;
+end;
+/

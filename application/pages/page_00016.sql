@@ -1,0 +1,764 @@
+prompt --application/pages/page_00016
+begin
+--   Manifest
+--     PAGE: 00016
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.10.07'
+,p_release=>'22.2.3'
+,p_default_workspace_id=>22028075290766633
+,p_default_application_id=>101
+,p_default_id_offset=>0
+,p_default_owner=>'SVIL_APEX'
+);
+wwv_flow_imp_page.create_page(
+ p_id=>16
+,p_name=>'Articoli'
+,p_alias=>'ARTICOLI'
+,p_step_title=>'Lista articoli'
+,p_autocomplete_on_off=>'OFF'
+,p_page_template_options=>'#DEFAULT#'
+,p_protection_level=>'C'
+,p_page_component_map=>'18'
+,p_last_updated_by=>'MARCO.DIPAOLA'
+,p_last_upd_yyyymmddhh24miss=>'20230417123131'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(31773125048461104)
+,p_plug_name=>'Articoli'
+,p_region_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_imp.id(22217015700170387)
+,p_plug_display_sequence=>10
+,p_query_type=>'TABLE'
+,p_query_table=>'ARTICOLI'
+,p_query_order_by_type=>'STATIC'
+,p_query_order_by=>'DESCR'
+,p_include_rowid_column=>false
+,p_plug_source_type=>'NATIVE_IR'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_prn_page_header=>'Articoli'
+);
+wwv_flow_imp_page.create_worksheet(
+ p_id=>wwv_flow_imp.id(31773233760461104)
+,p_name=>'Articoli'
+,p_max_row_count_message=>unistr('Il conteggio massimo di righe per questo report \00E8 #MAX_ROW_COUNT# righe. Applicare un filtro per ridurre il numero di record nella query.')
+,p_no_data_found_message=>'Nessun dato trovato.'
+,p_pagination_type=>'ROWS_X_TO_Y'
+,p_pagination_display_pos=>'BOTTOM_RIGHT'
+,p_report_list_mode=>'TABS'
+,p_lazy_loading=>false
+,p_show_detail_link=>'C'
+,p_show_notify=>'Y'
+,p_download_formats=>'CSV:HTML:XLSX:PDF'
+,p_enable_mail_download=>'Y'
+,p_detail_link=>'f?p=&APP_ID.:17:&APP_SESSION.::&DEBUG.:RP:P17_CODART:\#CODART#\'
+,p_detail_link_text=>'<span aria-label="Modifica"><span class="fa fa-edit" aria-hidden="true" title="Modifica"></span></span>'
+,p_owner=>'MARCO.DIPAOLA'
+,p_internal_uid=>31773233760461104
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31773603567461107)
+,p_db_column_name=>'CODART'
+,p_display_order=>0
+,p_column_identifier=>'A'
+,p_column_label=>'Codice'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31774039001461108)
+,p_db_column_name=>'CODGM'
+,p_display_order=>2
+,p_column_identifier=>'B'
+,p_column_label=>'Gruppo Merceologico #1'
+,p_column_type=>'STRING'
+,p_display_text_as=>'LOV_ESCAPE_SC'
+,p_heading_alignment=>'LEFT'
+,p_rpt_named_lov=>wwv_flow_imp.id(31723479106461056)
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31774459661461108)
+,p_db_column_name=>'CODGUI'
+,p_display_order=>3
+,p_column_identifier=>'C'
+,p_column_label=>'Cod. Guida'
+,p_column_type=>'STRING'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31774853815461109)
+,p_db_column_name=>'DESCR'
+,p_display_order=>4
+,p_column_identifier=>'D'
+,p_column_label=>'Descrizione'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31775244221461109)
+,p_db_column_name=>'DESCRFO'
+,p_display_order=>5
+,p_column_identifier=>'E'
+,p_column_label=>'Descrfo'
+,p_column_type=>'STRING'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31775604761461109)
+,p_db_column_name=>'DESCRING'
+,p_display_order=>6
+,p_column_identifier=>'F'
+,p_column_label=>'Descrizione Inglese'
+,p_column_type=>'STRING'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31776030492461109)
+,p_db_column_name=>'DESCRTEC'
+,p_display_order=>7
+,p_column_identifier=>'G'
+,p_column_label=>'Descrizione Tecnica'
+,p_column_type=>'STRING'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31776489536461110)
+,p_db_column_name=>'UM'
+,p_display_order=>8
+,p_column_identifier=>'H'
+,p_column_label=>unistr('Unit\00E0 di Misura')
+,p_column_type=>'STRING'
+,p_display_text_as=>'LOV_ESCAPE_SC'
+,p_heading_alignment=>'LEFT'
+,p_rpt_named_lov=>wwv_flow_imp.id(31811797089593606)
+,p_rpt_show_filter_lov=>'1'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31776819704461110)
+,p_db_column_name=>'NOTE'
+,p_display_order=>9
+,p_column_identifier=>'I'
+,p_column_label=>'Note'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31777274481461111)
+,p_db_column_name=>'NOTECAT'
+,p_display_order=>10
+,p_column_identifier=>'J'
+,p_column_label=>'Notecat'
+,p_column_type=>'STRING'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31777678038461111)
+,p_db_column_name=>'IMGPATH'
+,p_display_order=>11
+,p_column_identifier=>'K'
+,p_column_label=>'Percorso Immagine'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31778093437461111)
+,p_db_column_name=>'PREZZO'
+,p_display_order=>12
+,p_column_identifier=>'L'
+,p_column_label=>'Prezzo'
+,p_column_type=>'NUMBER'
+,p_heading_alignment=>'RIGHT'
+,p_column_alignment=>'RIGHT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31778493817461111)
+,p_db_column_name=>'PREZZOLST1'
+,p_display_order=>13
+,p_column_identifier=>'M'
+,p_column_label=>'Prezzolst1'
+,p_column_type=>'NUMBER'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31778868847461112)
+,p_db_column_name=>'PREZZOLST2'
+,p_display_order=>14
+,p_column_identifier=>'N'
+,p_column_label=>'Prezzolst2'
+,p_column_type=>'NUMBER'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31779232864461112)
+,p_db_column_name=>'PREZZOLST3'
+,p_display_order=>15
+,p_column_identifier=>'O'
+,p_column_label=>'Prezzolst3'
+,p_column_type=>'NUMBER'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31779617429461113)
+,p_db_column_name=>'CODCONTO'
+,p_display_order=>16
+,p_column_identifier=>'P'
+,p_column_label=>'Codconto'
+,p_column_type=>'STRING'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31780006844461113)
+,p_db_column_name=>'CODIVA'
+,p_display_order=>17
+,p_column_identifier=>'Q'
+,p_column_label=>'Codiva'
+,p_column_type=>'STRING'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31780437847461114)
+,p_db_column_name=>'DESCRBOLL'
+,p_display_order=>18
+,p_column_identifier=>'R'
+,p_column_label=>'Descrboll'
+,p_column_type=>'STRING'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31780800618461114)
+,p_db_column_name=>'CODGRST'
+,p_display_order=>19
+,p_column_identifier=>'S'
+,p_column_label=>'Codgrst'
+,p_column_type=>'STRING'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31781210048461115)
+,p_db_column_name=>'BARCODE'
+,p_display_order=>20
+,p_column_identifier=>'T'
+,p_column_label=>'Barcode'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31781675458461115)
+,p_db_column_name=>'CODDOG'
+,p_display_order=>21
+,p_column_identifier=>'U'
+,p_column_label=>'Coddog'
+,p_column_type=>'STRING'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31782020132461116)
+,p_db_column_name=>'CODCF'
+,p_display_order=>22
+,p_column_identifier=>'V'
+,p_column_label=>'Codcf'
+,p_column_type=>'STRING'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31782466910461116)
+,p_db_column_name=>'ART_LAV'
+,p_display_order=>23
+,p_column_identifier=>'W'
+,p_column_label=>'Art Lav'
+,p_column_type=>'STRING'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31782865194461116)
+,p_db_column_name=>'UM2'
+,p_display_order=>24
+,p_column_identifier=>'X'
+,p_column_label=>'Um2'
+,p_column_type=>'STRING'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31783291241461117)
+,p_db_column_name=>'FATTUM2'
+,p_display_order=>25
+,p_column_identifier=>'Y'
+,p_column_label=>'Fattum2'
+,p_column_type=>'NUMBER'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31783689512461117)
+,p_db_column_name=>'TIPO'
+,p_display_order=>26
+,p_column_identifier=>'Z'
+,p_column_label=>'Tipo'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31784088859461117)
+,p_db_column_name=>'MATRICOLA'
+,p_display_order=>27
+,p_column_identifier=>'AA'
+,p_column_label=>'Matricola'
+,p_column_type=>'STRING'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31784498905461118)
+,p_db_column_name=>'LUNGHEZZA'
+,p_display_order=>28
+,p_column_identifier=>'AB'
+,p_column_label=>'Lunghezza'
+,p_column_type=>'NUMBER'
+,p_heading_alignment=>'RIGHT'
+,p_column_alignment=>'RIGHT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31784842063461118)
+,p_db_column_name=>'LARGHEZZA'
+,p_display_order=>29
+,p_column_identifier=>'AC'
+,p_column_label=>'Larghezza'
+,p_column_type=>'NUMBER'
+,p_heading_alignment=>'RIGHT'
+,p_column_alignment=>'RIGHT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31785245004461118)
+,p_db_column_name=>'ALTEZZA'
+,p_display_order=>30
+,p_column_identifier=>'AD'
+,p_column_label=>'Altezza'
+,p_column_type=>'NUMBER'
+,p_heading_alignment=>'RIGHT'
+,p_column_alignment=>'RIGHT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31785666663461119)
+,p_db_column_name=>'SPESSORE'
+,p_display_order=>31
+,p_column_identifier=>'AE'
+,p_column_label=>'Spessore'
+,p_column_type=>'NUMBER'
+,p_heading_alignment=>'RIGHT'
+,p_column_alignment=>'RIGHT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31786075086461119)
+,p_db_column_name=>'UNPESO'
+,p_display_order=>32
+,p_column_identifier=>'AF'
+,p_column_label=>unistr('Unit\00E0 di Peso')
+,p_column_type=>'STRING'
+,p_display_text_as=>'LOV_ESCAPE_SC'
+,p_heading_alignment=>'LEFT'
+,p_rpt_named_lov=>wwv_flow_imp.id(31811797089593606)
+,p_rpt_show_filter_lov=>'1'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31786446010461119)
+,p_db_column_name=>'PLORDO'
+,p_display_order=>33
+,p_column_identifier=>'AG'
+,p_column_label=>'Peso Lordo'
+,p_column_type=>'NUMBER'
+,p_heading_alignment=>'RIGHT'
+,p_column_alignment=>'RIGHT'
+,p_format_mask=>'999G999G999G999G990D00'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31786891817461120)
+,p_db_column_name=>'PNETTO'
+,p_display_order=>34
+,p_column_identifier=>'AH'
+,p_column_label=>'Peso Netto'
+,p_column_type=>'NUMBER'
+,p_heading_alignment=>'RIGHT'
+,p_column_alignment=>'RIGHT'
+,p_format_mask=>'999G999G999G999G990D00'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31787262557461120)
+,p_db_column_name=>'SFRIDO'
+,p_display_order=>35
+,p_column_identifier=>'AI'
+,p_column_label=>'Sfrido %'
+,p_column_type=>'NUMBER'
+,p_heading_alignment=>'RIGHT'
+,p_column_alignment=>'RIGHT'
+,p_format_mask=>'999G999G999G999G990D00'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31787644305461120)
+,p_db_column_name=>'SCMIN'
+,p_display_order=>36
+,p_column_identifier=>'AJ'
+,p_column_label=>'Scorta Minima'
+,p_column_type=>'NUMBER'
+,p_heading_alignment=>'RIGHT'
+,p_column_alignment=>'RIGHT'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31788079538461120)
+,p_db_column_name=>'POSIZIONE'
+,p_display_order=>37
+,p_column_identifier=>'AK'
+,p_column_label=>'Posizione'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31788499168461121)
+,p_db_column_name=>'TIPO_ART'
+,p_display_order=>38
+,p_column_identifier=>'AL'
+,p_column_label=>'Tipo Art'
+,p_column_type=>'STRING'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31788881491461121)
+,p_db_column_name=>'DATA_CREAZIONE'
+,p_display_order=>39
+,p_column_identifier=>'AM'
+,p_column_label=>'Data Creazione'
+,p_column_type=>'DATE'
+,p_column_alignment=>'CENTER'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31789237126461121)
+,p_db_column_name=>'DATA_ULT_MODIFICA'
+,p_display_order=>40
+,p_column_identifier=>'AN'
+,p_column_label=>'Data Ultima Modifica'
+,p_column_type=>'DATE'
+,p_column_alignment=>'CENTER'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31789687893461122)
+,p_db_column_name=>'GGPROD'
+,p_display_order=>41
+,p_column_identifier=>'AO'
+,p_column_label=>'Ggprod'
+,p_column_type=>'NUMBER'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31790038534461122)
+,p_db_column_name=>'VOLUME'
+,p_display_order=>42
+,p_column_identifier=>'AP'
+,p_column_label=>'Volume'
+,p_column_type=>'NUMBER'
+,p_heading_alignment=>'RIGHT'
+,p_column_alignment=>'RIGHT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31790415576461122)
+,p_db_column_name=>'AREA'
+,p_display_order=>43
+,p_column_identifier=>'AQ'
+,p_column_label=>'Area'
+,p_column_type=>'NUMBER'
+,p_heading_alignment=>'RIGHT'
+,p_column_alignment=>'RIGHT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31790846250461123)
+,p_db_column_name=>'CODTIPOLOGIA'
+,p_display_order=>44
+,p_column_identifier=>'AR'
+,p_column_label=>'Tipologia'
+,p_column_type=>'STRING'
+,p_display_text_as=>'LOV_ESCAPE_SC'
+,p_heading_alignment=>'LEFT'
+,p_rpt_named_lov=>wwv_flow_imp.id(31742332584461074)
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31791212453461123)
+,p_db_column_name=>'PESO_SPECIF'
+,p_display_order=>45
+,p_column_identifier=>'AS'
+,p_column_label=>'Peso Specifico'
+,p_column_type=>'NUMBER'
+,p_heading_alignment=>'RIGHT'
+,p_column_alignment=>'RIGHT'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31791600633461123)
+,p_db_column_name=>'QT_INVENT'
+,p_display_order=>46
+,p_column_identifier=>'AT'
+,p_column_label=>'Qt. Invent. A. I.'
+,p_column_type=>'NUMBER'
+,p_heading_alignment=>'RIGHT'
+,p_column_alignment=>'RIGHT'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31792008416461124)
+,p_db_column_name=>'QT_QUAL'
+,p_display_order=>47
+,p_column_identifier=>'AU'
+,p_column_label=>'Qt. Intervallo Contr. Qual.'
+,p_column_type=>'NUMBER'
+,p_heading_alignment=>'RIGHT'
+,p_column_alignment=>'RIGHT'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31792418379461124)
+,p_db_column_name=>'PESO_QUADR'
+,p_display_order=>48
+,p_column_identifier=>'AV'
+,p_column_label=>'Peso Quadrotto'
+,p_column_type=>'NUMBER'
+,p_heading_alignment=>'RIGHT'
+,p_column_alignment=>'RIGHT'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31792820073461124)
+,p_db_column_name=>'CODGM2'
+,p_display_order=>49
+,p_column_identifier=>'AW'
+,p_column_label=>'Gruppo Merceologico #2'
+,p_column_type=>'STRING'
+,p_display_text_as=>'LOV_ESCAPE_SC'
+,p_heading_alignment=>'LEFT'
+,p_rpt_named_lov=>wwv_flow_imp.id(31723479106461056)
+,p_rpt_show_filter_lov=>'1'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31793270704461125)
+,p_db_column_name=>'CODGM3'
+,p_display_order=>50
+,p_column_identifier=>'AX'
+,p_column_label=>'Gruppo Merceologico #3'
+,p_column_type=>'STRING'
+,p_display_text_as=>'LOV_ESCAPE_SC'
+,p_heading_alignment=>'LEFT'
+,p_rpt_named_lov=>wwv_flow_imp.id(31723479106461056)
+,p_rpt_show_filter_lov=>'1'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31793648744461125)
+,p_db_column_name=>'PESO_SFRIDO'
+,p_display_order=>51
+,p_column_identifier=>'AY'
+,p_column_label=>'Peso Sfrido'
+,p_column_type=>'NUMBER'
+,p_heading_alignment=>'RIGHT'
+,p_column_alignment=>'RIGHT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31794022788461125)
+,p_db_column_name=>'COSTO_LAVORO_TAGLIO'
+,p_display_order=>52
+,p_column_identifier=>'AZ'
+,p_column_label=>'Costo Lavoro Taglio'
+,p_column_type=>'NUMBER'
+,p_heading_alignment=>'RIGHT'
+,p_column_alignment=>'RIGHT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31794816849461126)
+,p_db_column_name=>'TEMPO_PREV_LAV'
+,p_display_order=>54
+,p_column_identifier=>'BB'
+,p_column_label=>'Tempo Previsto Taglio'
+,p_column_type=>'NUMBER'
+,p_heading_alignment=>'RIGHT'
+,p_column_alignment=>'RIGHT'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31795232429461126)
+,p_db_column_name=>'DATA_INIZIO_FIRM'
+,p_display_order=>55
+,p_column_identifier=>'BC'
+,p_column_label=>'Data Inizio Firm'
+,p_column_type=>'DATE'
+,p_column_alignment=>'CENTER'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31795632103461127)
+,p_db_column_name=>'QUANT_FIRM'
+,p_display_order=>56
+,p_column_identifier=>'BD'
+,p_column_label=>unistr('Quantit\00E0 Firm')
+,p_column_type=>'NUMBER'
+,p_heading_alignment=>'RIGHT'
+,p_column_alignment=>'RIGHT'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31796079803461128)
+,p_db_column_name=>'PESO_COMPLESSIVO'
+,p_display_order=>57
+,p_column_identifier=>'BE'
+,p_column_label=>'Peso Complessivo'
+,p_column_type=>'NUMBER'
+,p_heading_alignment=>'RIGHT'
+,p_column_alignment=>'RIGHT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31796440918461128)
+,p_db_column_name=>'N_GANCI_VERN'
+,p_display_order=>58
+,p_column_identifier=>'BF'
+,p_column_label=>'N. Ganci Verniciatura'
+,p_column_type=>'NUMBER'
+,p_heading_alignment=>'RIGHT'
+,p_column_alignment=>'RIGHT'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31796878922461128)
+,p_db_column_name=>'ALIAS'
+,p_display_order=>59
+,p_column_identifier=>'BG'
+,p_column_label=>'Alias'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31797227160461129)
+,p_db_column_name=>'CODART_IMBALLO'
+,p_display_order=>60
+,p_column_identifier=>'BH'
+,p_column_label=>'Cod. Imballo'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(31797668942461129)
+,p_db_column_name=>'PEZZI_IMBALLO'
+,p_display_order=>61
+,p_column_identifier=>'BI'
+,p_column_label=>'Pezzi Imballo'
+,p_column_type=>'NUMBER'
+,p_heading_alignment=>'RIGHT'
+,p_column_alignment=>'RIGHT'
+,p_format_mask=>'999G999G999G999G990D00'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(22624711207566745)
+,p_db_column_name=>'IMG_FOTO'
+,p_display_order=>71
+,p_column_identifier=>'BJ'
+,p_column_label=>'Img Foto'
+,p_column_type=>'OTHER'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+);
+wwv_flow_imp_page.create_worksheet_rpt(
+ p_id=>wwv_flow_imp.id(31800306236461687)
+,p_application_user=>'APXWS_DEFAULT'
+,p_report_seq=>10
+,p_report_alias=>'318004'
+,p_status=>'PUBLIC'
+,p_is_default=>'Y'
+,p_report_columns=>'CODART:DESCR:ALIAS:CODGM:CODGM2:CODGM3:CODTIPOLOGIA:TIPO:MATRICOLA:NOTE:'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(31799849145461131)
+,p_plug_name=>'Indicatore di percorso'
+,p_region_template_options=>'#DEFAULT#:t-BreadcrumbRegion--useBreadcrumbTitle'
+,p_component_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_imp.id(22239269777170398)
+,p_plug_display_sequence=>10
+,p_plug_display_point=>'REGION_POSITION_01'
+,p_menu_id=>wwv_flow_imp.id(22129577048170305)
+,p_plug_source_type=>'NATIVE_BREADCRUMB'
+,p_menu_template_id=>wwv_flow_imp.id(22306726286170449)
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(31798100846461129)
+,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_imp.id(31773125048461104)
+,p_button_name=>'CREATE'
+,p_button_action=>'REDIRECT_PAGE'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(22305149526170448)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>'Crea'
+,p_button_position=>'RIGHT_OF_IR_SEARCH_BAR'
+,p_button_redirect_url=>'f?p=&APP_ID.:17:&APP_SESSION.::&DEBUG.:17::'
+);
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(31798482491461130)
+,p_name=>'Modifica report - Finestra di dialogo chiusa'
+,p_event_sequence=>10
+,p_triggering_element_type=>'REGION'
+,p_triggering_region_id=>wwv_flow_imp.id(31773125048461104)
+,p_bind_type=>'bind'
+,p_execution_type=>'IMMEDIATE'
+,p_bind_event_type=>'apexafterclosedialog'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(31798993151461130)
+,p_event_id=>wwv_flow_imp.id(31798482491461130)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_REFRESH'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_imp.id(31773125048461104)
+);
+wwv_flow_imp.component_end;
+end;
+/

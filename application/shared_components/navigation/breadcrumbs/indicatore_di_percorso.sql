@@ -1,0 +1,168 @@
+prompt --application/shared_components/navigation/breadcrumbs/indicatore_di_percorso
+begin
+--   Manifest
+--     MENU: Indicatore di percorso
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2022.10.07'
+,p_release=>'22.2.3'
+,p_default_workspace_id=>22028075290766633
+,p_default_application_id=>101
+,p_default_id_offset=>0
+,p_default_owner=>'SVIL_APEX'
+);
+wwv_flow_imp_shared.create_menu(
+ p_id=>wwv_flow_imp.id(22129577048170305)
+,p_name=>'Indicatore di percorso'
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(22129728003170306)
+,p_short_name=>'Home'
+,p_link=>'f?p=&APP_ID.:1:&SESSION.::&DEBUG.:::'
+,p_page_id=>1
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(31539943893763642)
+,p_parent_id=>wwv_flow_imp.id(22129728003170306)
+,p_short_name=>'Anagrafiche'
+,p_link=>'f?p=&APP_ID.:20:&SESSION.::&DEBUG.:::'
+,p_page_id=>20
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(31550702360776523)
+,p_parent_id=>wwv_flow_imp.id(31539943893763642)
+,p_short_name=>unistr('Unit\00E0 di Misura')
+,p_link=>'f?p=&APP_ID.:2:&APP_SESSION.::&DEBUG.:::'
+,p_page_id=>2
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(31653095995321443)
+,p_parent_id=>wwv_flow_imp.id(31540303993769835)
+,p_short_name=>'Anagrafiche'
+,p_link=>'f?p=&APP_ID.:22:&SESSION.::&DEBUG.:::'
+,p_page_id=>22
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(31663443097340809)
+,p_parent_id=>wwv_flow_imp.id(31653095995321443)
+,p_short_name=>'Tipologie Componenti'
+,p_link=>'f?p=&APP_ID.:12:&APP_SESSION.::&DEBUG.:::'
+,p_page_id=>12
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(38927700401256662)
+,p_parent_id=>wwv_flow_imp.id(38927585628251138)
+,p_short_name=>'Anagrafiche'
+,p_link=>'f?p=&APP_ID.:24:&SESSION.::&DEBUG.:::'
+,p_page_id=>24
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(56296109835017904)
+,p_parent_id=>wwv_flow_imp.id(38927700401256662)
+,p_short_name=>'Lista Distinte Base'
+,p_link=>'f?p=&APP_ID.:18:&SESSION.::&DEBUG.:::'
+,p_page_id=>18
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(61246156189082834)
+,p_short_name=>'Categorie Costo Distinta'
+,p_link=>'f?p=&APP_ID.:25:&APP_SESSION.::&DEBUG.:::'
+,p_page_id=>25
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(61362605843351989)
+,p_short_name=>'Call'
+,p_link=>'f?p=&APP_ID.:27:&APP_SESSION.::&DEBUG.:::'
+,p_page_id=>27
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(31540303993769835)
+,p_parent_id=>wwv_flow_imp.id(22129728003170306)
+,p_option_sequence=>20
+,p_short_name=>'Magazzino'
+,p_link=>'f?p=&APP_ID.:21:&SESSION.::&DEBUG.:::'
+,p_page_id=>21
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(31569756243819812)
+,p_parent_id=>wwv_flow_imp.id(31539943893763642)
+,p_option_sequence=>20
+,p_short_name=>'Nazioni'
+,p_link=>'f?p=&APP_ID.:4:&SESSION.::&DEBUG.:::'
+,p_page_id=>4
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(31699091034410023)
+,p_parent_id=>wwv_flow_imp.id(31653095995321443)
+,p_option_sequence=>20
+,p_short_name=>'Gruppi Merceologici'
+,p_link=>'f?p=&APP_ID.:14:&SESSION.::&DEBUG.:::'
+,p_page_id=>14
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(56449069669458251)
+,p_parent_id=>wwv_flow_imp.id(38927700401256662)
+,p_option_sequence=>20
+,p_short_name=>'Gestione Distinta Base'
+,p_link=>'f?p=&APP_ID.:19:&SESSION.::&DEBUG.:::'
+,p_page_id=>19
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(31592175072912704)
+,p_parent_id=>wwv_flow_imp.id(31539943893763642)
+,p_option_sequence=>30
+,p_short_name=>'Zone'
+,p_link=>'f?p=&APP_ID.:6:&SESSION.::&DEBUG.:::'
+,p_page_id=>6
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(31799621032461130)
+,p_parent_id=>wwv_flow_imp.id(31653095995321443)
+,p_option_sequence=>30
+,p_short_name=>'Lista Articoli'
+,p_link=>'f?p=&APP_ID.:16:&SESSION.::&DEBUG.:::'
+,p_page_id=>16
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(38927585628251138)
+,p_parent_id=>wwv_flow_imp.id(22129728003170306)
+,p_option_sequence=>30
+,p_short_name=>'Produzione'
+,p_link=>'f?p=&APP_ID.:23:&SESSION.::&DEBUG.:::'
+,p_page_id=>23
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(31609118623033846)
+,p_parent_id=>wwv_flow_imp.id(31539943893763642)
+,p_option_sequence=>40
+,p_short_name=>'Valute'
+,p_link=>'f?p=&APP_ID.:8:&SESSION.::&DEBUG.:::'
+,p_page_id=>8
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(31845333971042064)
+,p_parent_id=>wwv_flow_imp.id(31653095995321443)
+,p_option_sequence=>40
+,p_short_name=>'Gestione Articolo'
+,p_link=>'f?p=&APP_ID.:17:&SESSION.::&DEBUG.:::'
+,p_page_id=>17
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(31635364138128013)
+,p_parent_id=>wwv_flow_imp.id(31539943893763642)
+,p_option_sequence=>50
+,p_short_name=>'Codici IVA'
+,p_link=>'f?p=&APP_ID.:10:&SESSION.::&DEBUG.:::'
+,p_page_id=>10
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(22518901684171040)
+,p_parent_id=>wwv_flow_imp.id(22129728003170306)
+,p_option_sequence=>10000
+,p_short_name=>'Impostazioni'
+,p_link=>'f?p=&APP_ID.:10000:&SESSION.::&DEBUG.:::'
+,p_page_id=>10000
+);
+wwv_flow_imp.component_end;
+end;
+/
